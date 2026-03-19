@@ -1,1 +1,29 @@
 @import "tailwindcss";
+
+/* Override dark variant to use "dark" class in the html element as selector */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@font-face {
+	font-family: "LeagueSpartan";
+	font-style: normal;
+	font-display: swap;
+	font-weight: 400;
+	src: url(/fonts/LeagueSpartan/LeagueSpartan-Regular.ttf) format("truetype");
+}
+
+@font-face {
+	font-family: "LeagueSpartan";
+	font-style: normal;
+	font-display: swap;
+	font-weight: 700;
+	src: url(/fonts/LeagueSpartan/LeagueSpartan-Bold.ttf) format("truetype");
+}
+
+:root {
+	/* Light theme */
+	--light-scheme-1: #f7f0f5;
+	--light-scheme-2: #eae7e9;
+	/* Dark theme */
+	--dark-scheme-1: #100f0f;
+	--dark-scheme-2: #1b191a;
+}

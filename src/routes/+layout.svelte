@@ -1,53 +1,28 @@
 <script lang="ts">
-	// Import Tailwind CSS
+	// Import Tailwind CSS, delegate to Vite
 	import "../app.css";
 
-	// App menu
-	const menuItems = [
-		{ name: "Dashboard", href: "/" },
-		{ name: "Vault", href: "/vault" },
-		{ name: "Close", href: "/close" },
-		{ name: "About", href: "/about" },
-	]
+    import Sidebar from "$lib/components/Sidebar.svelte";
+    import Main from "$lib/components/Main.svelte";
 
-	// Get current page
-	import { page } from "$app/state";
-	const currentMenu = $derived(
-		menuItems.find(item => item.href === page.url.pathname) !
-	);
+	// Get child components (+page.svelte)
+	const { children } = $props();
 
-	let { children } = $props();
+	// Disable default context menu
+	const preventDefaultContextMenu = (e: MouseEvent) => {
+		e.preventDefault();
+	};
+	
+	window.addEventListener("contextmenu", preventDefaultContextMenu);
 </script>
 
-<div class="flex h-screen">
-	<!-- Sidebar 20% horizontal width -->
-	<aside class="w-1/5 p-10">
-		<div>
-			<a href="/">
-				<img src="/imgs/logo_whitebg_cropped_1610x1610.png" alt="Praesidium logo">
-			</a>
-		</div>
-		<nav class="mt-5 flex flex-col">
-			{#each menuItems as item}
-				<a href={item.href} class="text-center">
-					{item.name}
-				</a>
-			{/each}
-		</nav>
-	</aside>
-	<!-- Main area 80% horizontal width -->
-	<div class="w-4/5">
-		<!-- Top bar -->
-		<header>
-			<h1>Praesidium Desktop - {currentMenu.name}</h1>
-		</header>
-		<!-- Content area -->
-		<main>
-			{@render children()}
-		</main>
-		<!-- Footer -->
-		<footer>
-
-		</footer>
-	</div>
+<div class="flex h-screen font-[LeagueSpartan]
+	text-black dark:text-white
+	bg-(--light-scheme-1) dark:bg-(--dark-scheme-1)
+	"
+>
+	<!-- 20% horizontal width -->
+	<Sidebar />
+	<!-- 80% horizontal width -->
+	<Main {children} />
 </div>
