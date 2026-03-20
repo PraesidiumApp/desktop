@@ -5,7 +5,7 @@
 {#if !appState.vault.isOpen}
 <div class="flex flex-col h-full justify-center items-center text-4xl">
 	<p>
-		<button>
+		<button class="cursor-pointer font-bold underline">
 			Open
 		</button>
 		a vault to get started
@@ -14,7 +14,7 @@
 		OR
 	</p>
 	<p>
-		<button>
+		<button class="cursor-pointer font-bold underline">
 			Create
 		</button>
 		a new one
