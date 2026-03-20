@@ -25,8 +25,24 @@ class AppState {
 
 	// Open GitHub page
 	openGithub() {
-		window.alert("The Praesidium GitHub page will open with the system's default browser");
-		openUrl("https://github.com/PraesidiumApp");
+		const choice = window.confirm(`
+			Do you want to open the Praesidium GitHub page?
+			(It will open with your system's default web browser)
+		`);
+		
+		if (choice) {
+			openUrl("https://github.com/PraesidiumApp");
+		}
+	}
+
+	// Show app info
+	showInfo() {
+		window.alert(`
+			Praesidium Desktop - Version ${this.version}
+			By Germán (https://github.com/itsgerliz)
+			Made with Tauri and SvelteKit
+			Released under the MIT license
+		`)
 	}
 
 	// App theme management

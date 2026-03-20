@@ -26,8 +26,7 @@
 	<!-- App version and commit -->
 	<div class="mb-5">
 		<p class="text-center font-bold text-lg">
-			Version {appState.version}<br>
-			Commit {appState.commit}
+			Version {appState.version}
 		</p>
 	</div>
 	<!-- Bottom icons -->
