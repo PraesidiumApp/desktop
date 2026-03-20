@@ -9,16 +9,17 @@
 	const { children } = $props();
 
 	// Disable default context menu
-	const preventDefaultContextMenu = (e: MouseEvent) => {
-		e.preventDefault();
+	const preventDefaultContextMenu = (event: MouseEvent) => {
+		event.preventDefault();
 	};
 	
 	window.addEventListener("contextmenu", preventDefaultContextMenu);
 </script>
 
-<div class="flex h-screen font-[LeagueSpartan]
+<div class="flex flex-row min-h-screen font-[LeagueSpartan]
 	text-black dark:text-white
 	bg-(--light-scheme-1) dark:bg-(--dark-scheme-1)
+	overflow-auto
 	"
 >
 	<!-- 20% horizontal width -->
