@@ -1,0 +1,23 @@
+{
+  "navigation": {
+    "overview": "Overview",
+    "vault": "Vault",
+    "generator": "Generator",
+    "settings": "Settings",
+    "about": "About"
+  },
+  "metadata": {
+    "version": "Version",
+    "commit": "Commit"
+  },
+  "overview": {
+    "unopened": {
+      "open_vault": "Open a existing one",
+      "or": "OR",
+      "create_vault": "Create a new vault"
+    },
+    "opened": {
+      "vault": "Vault"
+    }
+  }
+}

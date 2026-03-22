@@ -1,0 +1,23 @@
+{
+  "metadata": {
+    "commit": "Commit",
+    "version": "Versión"
+  },
+  "navigation": {
+    "about": "Acerca de",
+    "generator": "Generador",
+    "overview": "Resumen",
+    "settings": "Configuración",
+    "vault": "Baúl"
+  },
+  "overview": {
+    "opened": {
+      "vault": "Baúl"
+    },
+    "unopened": {
+      "create_vault": "Crea un nuevo baúl",
+      "open_vault": "Abre uno ya existente",
+      "or": "O"
+    }
+  }
+}
