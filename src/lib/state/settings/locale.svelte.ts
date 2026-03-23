@@ -6,11 +6,9 @@ export class LocaleState {
 		"es"
 	] as const;
 
-	current = $state<typeof this.available[number]>("en");
-	labels = en;
+	labels = $state(en);
 
 	async setLocale(locale: typeof this.available[number]) {
-		this.current = locale;
 		this.labels = await import(`../../locales/${locale}.json`);
 	}
 }
