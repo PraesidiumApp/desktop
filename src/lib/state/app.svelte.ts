@@ -1,29 +1,21 @@
-import { page } from "$app/state";
-import { openUrl } from "@tauri-apps/plugin-opener";
+import { SettingsState } from "./settings.svelte";
+import { NavigationState } from "./navigation.svelte";
+import { VaultState } from "./vault.svelte";
 
 class AppState {
-	constructor() {
-		// Get user theme preference or default to "light"
-		this.getTheme();
-	}
+	metadata = {
+		version: "0.1.0-dev",
+		commit: "0f13d53"
+	} as const;
 
-	// App metadata
-	version = "0.1.0-dev";
-	
-	commit = "0f13d59";
-	
-	// Menu options and current menu
-	menu = [
-		{ name: "Dashboard", href: "/" },
-		{ name: "Vault", href: "/vault" },
-		{ name: "Close", href: "/close" },
-	];
+	settings = new SettingsState();
 
-	currentMenu = $derived(
-		this.menu.find(item => item.href === page.url.pathname) !
-	);
+	navigation = new NavigationState();
 
-	// Open GitHub page
+	vault = new VaultState();
+
+	/*
+
 	openGithub() {
 		const choice = window.confirm(`
 			Do you want to open the Praesidium GitHub page?
@@ -35,7 +27,6 @@ class AppState {
 		}
 	}
 
-	// Show app info
 	showInfo() {
 		window.alert(`
 			Praesidium Desktop - Version ${this.version}
@@ -44,36 +35,8 @@ class AppState {
 			Released under the MIT license
 		`)
 	}
+*/
 
-	// App theme management
-	theme = $state<"light" | "dark">("light");
-
-	private getTheme() {
-		const userPreference = window.localStorage.getItem("preferred-theme") as "light" | "dark";
-
-		// Only update this.theme if preferred-theme is "dark"
-		// if "light" or null theme it is already defaulted to "light"
-		if (userPreference === "dark") {
-			this.theme = userPreference;
-			this.updateTheme();
-		}
-	}
-
-	private updateTheme() {
-		document.documentElement.classList.remove("light", "dark");
-		document.documentElement.classList.add(this.theme);
-	}
-
-	toggleTheme() {
-		this.theme = this.theme === "light" ? "dark" : "light";
-		window.localStorage.setItem("preferred-theme", this.theme);
-		this.updateTheme();
-	}
-
-	// Vault management
-	vault = $state({
-		isOpen: false
-	});
 }
 
 export const appState = new AppState();

@@ -1,23 +1,27 @@
 <script lang="ts">
     import { appState } from "$lib/state/app.svelte";
+
+	const labels = appState.settings.locale.labels;
 </script>
 
-{#if !appState.vault.isOpen}
+{#if appState.vault.isOpen}
+<div>
+	<h1>Dashboard vault open TODO</h1>
+</div>
+{:else}
 <div class="flex flex-col h-full justify-center items-center text-4xl">
 	<p>
 		<button class="cursor-pointer font-bold underline">
-			Open
+			{labels.overview.unopened.create_vault}
 		</button>
-		a vault to get started
 	</p>
 	<p>
-		OR
+		{labels.overview.unopened.or}
 	</p>
 	<p>
 		<button class="cursor-pointer font-bold underline">
-			Create
+			{labels.overview.unopened.open_vault}
 		</button>
-		a new one
 	</p>
 </div>
 {/if}

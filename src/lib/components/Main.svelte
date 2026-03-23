@@ -3,13 +3,18 @@
 
 	// Receive child components to render from +layout.svelte
 	const { children } = $props();
+
+	const labels = appState.settings.locale.labels;
 </script>
 
 <div class="w-4/5 flex flex-col p-2">
 	<!-- Top bar -->
 	<header>
 		<h1 class="text-center font-bold text-2xl">
-			Praesidium Desktop - {appState.currentMenu.name}
+			Praesidium Desktop - 
+			{labels.navigation[
+				appState.navigation.current.name.toLowerCase() as keyof typeof labels.navigation]
+			}
 		</h1>
 	</header>
 	<!-- Content area -->
