@@ -12,7 +12,7 @@
   },
   "overview": {
     "unopened": {
-      "open_vault": "Open a existing one",
+      "open_vault": "Open an existing one",
       "or": "OR",
       "create_vault": "Create a new vault"
     },
