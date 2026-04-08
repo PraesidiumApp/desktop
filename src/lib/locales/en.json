@@ -19,5 +19,12 @@
     "opened": {
       "vault": "Vault"
     }
+  },
+  "settings": {
+    "colortheme": {
+      "colortheme": "Color theme",
+      "light": "Light",
+      "dark": "Dark"
+    }
   }
 }

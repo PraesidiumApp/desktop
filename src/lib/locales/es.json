@@ -19,5 +19,12 @@
       "open_vault": "Abre uno ya existente",
       "or": "O"
     }
+  },
+  "settings": {
+    "colortheme": {
+      "colortheme": "Tema de color",
+      "dark": "Oscuro",
+      "light": "Claro"
+    }
   }
 }
