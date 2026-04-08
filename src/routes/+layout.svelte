@@ -8,12 +8,13 @@
 	// Get child components (+page.svelte)
 	const { children } = $props();
 
-	// Disable default context menu
+	/* Disable default context menu
 	const preventDefaultContextMenu = (event: MouseEvent) => {
 		event.preventDefault();
 	};
 	
 	window.addEventListener("contextmenu", preventDefaultContextMenu);
+	*/
 </script>
 
 <div class="flex flex-row min-h-screen font-[LeagueSpartan]
