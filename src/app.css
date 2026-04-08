@@ -23,7 +23,9 @@
 	/* Light theme */
 	--light-scheme-1: #f7f0f5;
 	--light-scheme-2: #eae7e9;
+	--light-scheme-3: #d2ced1;
 	/* Dark theme */
 	--dark-scheme-1: #100f0f;
 	--dark-scheme-2: #1b191a;
+	--dark-scheme-3: #2d272a;
 }
