@@ -1,3 +1,3 @@
 export class VaultState {
-	isOpen = $state(false);
+	open = $state(false);
 }

@@ -4,7 +4,7 @@
 	const labels = appState.settings.locale.labels;
 </script>
 
-{#if appState.vault.isOpen}
+{#if appState.vault.open}
 <div>
 	<h1>Dashboard vault open TODO</h1>
 </div>
