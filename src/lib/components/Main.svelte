@@ -1,19 +1,19 @@
 <script lang="ts">
-	import { appState } from "$lib/state/app.svelte";
+	import { appState, localeState } from "$lib/state/app.svelte";
 
 	// Receive child components to render from +layout.svelte
 	const { children } = $props();
-
-	const labels = appState.settings.locale.labels;
 </script>
 
 <div class="w-4/5 flex flex-col p-2">
 	<!-- Top bar -->
 	<header>
 		<h1 class="text-center font-bold text-2xl">
-			Praesidium Desktop - 
-			{labels.navigation[
-				appState.navigation.current.name.toLowerCase() as keyof typeof labels.navigation]
+			Praesidium Desktop - {
+				localeState.labels.navigation[
+					appState.navigation.current["name"].toLowerCase() as
+					keyof typeof localeState.labels.navigation
+				]
 			}
 		</h1>
 	</header>

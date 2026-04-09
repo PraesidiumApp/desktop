@@ -25,6 +25,11 @@
       "colortheme": "Tema de color",
       "dark": "Oscuro",
       "light": "Claro"
+    },
+    "language": {
+      "english": "Inglés",
+      "spanish": "Español",
+      "language": "Lenguaje"
     }
   }
 }

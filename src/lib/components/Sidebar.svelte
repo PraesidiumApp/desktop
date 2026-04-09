@@ -1,7 +1,6 @@
 <script lang="ts">
-	import { appState } from "$lib/state/app.svelte";
-
-	const labels = appState.settings.locale.labels;
+	import { appState, localeState } from "$lib/state/app.svelte";
+	import { available } from "$lib/state/navigation.svelte";
 </script>
 
 <aside class="w-1/5 p-2 flex flex-col">
@@ -16,19 +15,21 @@
 	</div>
 	<!-- Menu -->
 	<nav class="flex flex-col flex-1 gap-2 justify-center my-5">
-		{#each appState.navigation.available as item}
+		{#each available as item}
 			<a href={item.href} class="text-center text-2xl
 				{appState.navigation.current === item ? "font-bold" : ""}
 				"
 			>
-				{labels.navigation[item.name.toLowerCase() as keyof typeof labels.navigation]}
+				{localeState.labels.navigation[item.name.toLowerCase() as 
+					keyof typeof localeState.labels.navigation
+				]}
 			</a>
 		{/each}
 	</nav>
 	<!-- App version and commit -->
 	<div>
 		<p class="text-center font-bold text-2xl">
-			{labels.metadata.version} {appState.metadata.version}
+			{localeState.labels.metadata.version} {appState.metadata.version}
 		</p>
 	</div>
 </aside>

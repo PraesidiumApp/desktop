@@ -1,14 +1,31 @@
 import en from "../../locales/en.json";
+import es from "../../locales/es.json";
+
+const available = {
+	en,
+	es
+};
+
+type LocaleKey = keyof typeof available;
 
 export class LocaleState {
-	available = [
-		"en",
-		"es"
-	] as const;
+	// Default to english locale
+	_current: LocaleKey = $state("en");
+	labels = $derived(available[this._current]);
 
-	labels = $state(en);
+	constructor() {
+		const preferredLocale = window.localStorage.getItem("preferred-locale") as LocaleKey;
+		if (preferredLocale in available) {
+			this.locale = preferredLocale;
+		}
+	}
 
-	async setLocale(locale: typeof this.available[number]) {
-		this.labels = await import(`../../locales/${locale}.json`);
+	set locale(locale: LocaleKey) {
+		this._current = locale;
+		window.localStorage.setItem("preferred-locale", this._current);
+	}
+
+	get locale(): LocaleKey {
+		return this._current;
 	}
 }

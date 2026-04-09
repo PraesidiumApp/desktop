@@ -1,6 +1,5 @@
 import { SettingsState } from "./settings.svelte";
 import { NavigationState } from "./navigation.svelte";
-import { VaultState } from "./vault.svelte";
 
 class AppState {
 	metadata = {
@@ -12,10 +11,7 @@ class AppState {
 
 	navigation = new NavigationState();
 
-	vault = new VaultState();
-
 	/*
-
 	openGithub() {
 		const choice = window.confirm(`
 			Do you want to open the Praesidium GitHub page?
@@ -36,7 +32,9 @@ class AppState {
 		`)
 	}
 */
-
 }
 
 export const appState = new AppState();
+
+// This is a shortcut variable to avoid writing these three repetitive separators on each labels read
+export const localeState = appState.settings.locale;

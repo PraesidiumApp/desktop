@@ -1,30 +1,35 @@
 {
-  "navigation": {
-    "overview": "Overview",
-    "vault": "Vault",
-    "generator": "Generator",
-    "settings": "Settings",
-    "about": "About"
-  },
   "metadata": {
-    "version": "Version",
-    "commit": "Commit"
+    "commit": "Commit",
+    "version": "Version"
+  },
+  "navigation": {
+    "about": "About",
+    "generator": "Generator",
+    "overview": "Overview",
+    "settings": "Settings",
+    "vault": "Vault"
   },
   "overview": {
-    "unopened": {
-      "open_vault": "Open an existing one",
-      "or": "OR",
-      "create_vault": "Create a new vault"
-    },
     "opened": {
       "vault": "Vault"
+    },
+    "unopened": {
+      "create_vault": "Create a new vault",
+      "open_vault": "Open an existing one",
+      "or": "OR"
     }
   },
   "settings": {
     "colortheme": {
       "colortheme": "Color theme",
-      "light": "Light",
-      "dark": "Dark"
+      "dark": "Dark",
+      "light": "Light"
+    },
+    "language": {
+      "english": "English",
+      "language": "Language",
+      "spanish": "Spanish"
     }
   }
 }
