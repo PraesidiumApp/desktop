@@ -13,8 +13,8 @@ export class ThemeState {
 		}
 	}
 
-	toggleTheme() {
-		this.current = this.current === "light" ? "dark" : "light";
+	toggleTheme(theme: "light" | "dark") {
+		this.current = theme;
 		this.saveTheme();
 		this.updateTheme();
 	}
