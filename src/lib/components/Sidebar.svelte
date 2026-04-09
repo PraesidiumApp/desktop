@@ -10,7 +10,7 @@
 		<a href="/">
 			<img alt="App logo"
 				src={`/imgs/app/logo_
-				${appState.settings.theme.current === "light" ? "black" : "white"}.png`}
+				${appState.settings.theme.theme === "light" ? "black" : "white"}.png`}
 			>
 		</a>
 	</div>

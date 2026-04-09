@@ -1,30 +1,22 @@
 export class ThemeState {
+	// Default to light theme
+	_current = $state<"light" | "dark">("light");
+
 	constructor() {
-		this.getTheme();
-		this.updateTheme();
-	}
-
-	current = $state<"light" | "dark">("light");
-
-	getTheme() {
 		const preferredTheme = window.localStorage.getItem("preferred-theme") as "light" | "dark";
-		if (preferredTheme === "light" || preferredTheme === "dark") {
-			this.current = preferredTheme;
+		if (preferredTheme == "light" || preferredTheme == "dark") {
+			this.theme = preferredTheme;
 		}
 	}
 
-	toggleTheme(theme: "light" | "dark") {
-		this.current = theme;
-		this.saveTheme();
-		this.updateTheme();
-	}
-
-	saveTheme() {
-		window.localStorage.setItem("preferred-theme", this.current);
-	}
-
-	updateTheme() {
+	set theme(theme: "light" | "dark") {
+		this._current = theme;
+		window.localStorage.setItem("preferred-theme", this._current);
 		document.documentElement.classList.remove("light", "dark");
-		document.documentElement.classList.add(this.current);
+		document.documentElement.classList.add(this._current);
+	}
+
+	get theme(): "light" | "dark" {
+		return this._current;
 	}
 }
