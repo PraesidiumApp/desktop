@@ -31,5 +31,9 @@
       "spanish": "Español",
       "language": "Lenguaje"
     }
+  },
+  "about": {
+    "leaguespartanabout": "Praesidium Desktop usa League Spartan como su fuente principal, licenciada bajo la SIL Open Font License:",
+    "praesidiumabout": "Praesidium Desktop es software libre y de código abierto licenciado bajo la BSD 3-Clause:"
   }
 }

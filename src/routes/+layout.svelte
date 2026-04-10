@@ -20,7 +20,6 @@
 <div class="flex flex-row min-h-screen font-[LeagueSpartan]
 	text-black dark:text-white
 	bg-(--light-scheme-1) dark:bg-(--dark-scheme-1)
-	overflow-auto
 	"
 >
 	<!-- 20% horizontal width -->
