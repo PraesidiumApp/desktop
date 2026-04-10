@@ -2,9 +2,9 @@
 	import { appState, localeState } from "$lib/state/app.svelte";
 </script>
 
-<div class="flex flex-col h-full m-2">
+<div class="flex flex-col h-full m-2 gap-2 justify-center items-center">
 	<div class="bg-(--light-scheme-3) dark:bg-(--dark-scheme-3) 
-	rounded-xl">
+	rounded-xl flex flex-row w-fit p-2 gap-2">
 		<p>
 			{localeState.labels.settings.colortheme.colortheme}
 		</p>
@@ -18,7 +18,7 @@
 		</select>
 	</div>
 	<div class="bg-(--light-scheme-3) dark:bg-(--dark-scheme-3) 
-	rounded-xl">
+	rounded-xl flex flex-row w-fit p-2 gap-2">
 		<p>
 			{localeState.labels.settings.language.language}
 		</p>
