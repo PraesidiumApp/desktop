@@ -9,6 +9,7 @@ export class ThemeState {
 	// Default to light theme
 	_current = $state<ThemeOption>("light");
 
+	// TODO: Fix keep preferred theme on app restart
 	constructor() {
 		const preferredTheme = window.localStorage.getItem("preferred-theme") as ThemeOption;
 		if (preferredTheme in available) {
