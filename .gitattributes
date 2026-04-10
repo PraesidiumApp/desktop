@@ -1,0 +1,2 @@
+# Don't count generated .html by cargo-about as part of the GitHub's project's code languages summary
+static/software-licenses.html linguist-vendored
