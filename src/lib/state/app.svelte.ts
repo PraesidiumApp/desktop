@@ -1,5 +1,6 @@
 import { SettingsState } from "./settings.svelte";
 import { NavigationState } from "./navigation.svelte";
+import { AboutState } from "./about.svelte";
 
 class AppState {
 	metadata = {
@@ -10,6 +11,8 @@ class AppState {
 	settings = new SettingsState();
 
 	navigation = new NavigationState();
+
+	about = new AboutState();
 
 	/*
 	openGithub() {

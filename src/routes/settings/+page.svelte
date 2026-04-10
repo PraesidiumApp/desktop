@@ -2,7 +2,7 @@
 	import { appState, localeState } from "$lib/state/app.svelte";
 </script>
 
-<div class="flex flex-col h-full m-2 gap-2 justify-center items-center">
+<div class="flex flex-col h-full m-2 gap-2 justify-center items-center text-3xl">
 	<div class="bg-(--light-scheme-3) dark:bg-(--dark-scheme-3) 
 	rounded-xl flex flex-row w-fit p-2 gap-2">
 		<p>
