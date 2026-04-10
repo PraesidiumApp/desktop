@@ -1,6 +1,7 @@
 [package]
 name = "praesidium-desktop"
 version = "0.1.0-dev"
+license = "BSD-3-Clause"
 description = "Praesidium's desktop app"
 authors = ["Germán (@itsgerliz)"]
 edition = "2021"
