@@ -12,7 +12,7 @@ export class ThemeState {
 	// TODO: Fix keep preferred theme on app restart
 	constructor() {
 		const preferredTheme = window.localStorage.getItem("preferred-theme") as ThemeOption;
-		if (preferredTheme in available) {
+		if (available.includes(preferredTheme)) {
 			this.theme = preferredTheme;
 		}
 	}
