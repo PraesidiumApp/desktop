@@ -17,7 +17,11 @@
     "unopened": {
       "create_vault": "Create a new vault",
       "open_vault": "Open an existing one",
-      "or": "OR"
+      "or": "OR",
+      "newvaultpath": "Your new vault will be created on",
+      "existingvaultpath": "Your vault path is",
+      "select": "Select",
+      "cancel": "Cancel"
     }
   },
   "settings": {

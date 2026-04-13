@@ -17,7 +17,11 @@
     "unopened": {
       "create_vault": "Crea un nuevo baúl",
       "open_vault": "Abre uno ya existente",
-      "or": "O"
+      "or": "O",
+      "newvaultpath": "El nuevo baúl se creará en",
+      "select": "Seleccionar",
+      "existingvaultpath": "La ruta de tu baúl es",
+      "cancel": "Cancelar"
     }
   },
   "settings": {
