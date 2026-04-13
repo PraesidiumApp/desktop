@@ -11,9 +11,6 @@
     "vault": "Vault"
   },
   "overview": {
-    "opened": {
-      "vault": "Vault"
-    },
     "unopened": {
       "create_vault": "Create a new vault",
       "open_vault": "Open an existing one",
@@ -21,7 +18,14 @@
       "newvaultpath": "Your new vault will be created on",
       "existingvaultpath": "Your vault path is",
       "select": "Select",
-      "cancel": "Cancel"
+      "cancel": "Cancel",
+      "continue": "Continue",
+      "praesidiumvault": "Praesidium vault",
+      "withpassword": "With password",
+      "writepasswordhere": "Write your password here",
+      "cantlaunchempty": "Can't launch a new session with an empty path or password",
+      "creatingvault": "Your new vault is being created, please wait...",
+      "openingvault": "Your vault is being opened, please wait..."
     }
   },
   "settings": {

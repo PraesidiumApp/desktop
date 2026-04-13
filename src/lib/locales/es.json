@@ -8,20 +8,24 @@
     "generator": "Generador",
     "overview": "Resumen",
     "settings": "Configuración",
-    "vault": "Baúl"
+    "vault": "Bóveda"
   },
   "overview": {
-    "opened": {
-      "vault": "Baúl"
-    },
     "unopened": {
-      "create_vault": "Crea un nuevo baúl",
-      "open_vault": "Abre uno ya existente",
+      "create_vault": "Crea una nueva bóveda",
+      "open_vault": "Abre una ya existente",
       "or": "O",
-      "newvaultpath": "El nuevo baúl se creará en",
+      "newvaultpath": "La nueva bóveda se creará en",
       "select": "Seleccionar",
-      "existingvaultpath": "La ruta de tu baúl es",
-      "cancel": "Cancelar"
+      "existingvaultpath": "La ruta de tu bóveda es",
+      "cancel": "Cancelar",
+      "continue": "Continuar",
+      "praesidiumvault": "Bóveda de Praesidium",
+      "withpassword": "Con contraseña",
+      "writepasswordhere": "Escribe tu contraseña aquí",
+      "cantlaunchempty": "No se puede lanzar una nueva sesión con una ruta o contraseña vacía",
+      "creatingvault": "Tu nueva bóveda está siendo creada, por favor espera...",
+      "openingvault": "Tu bóveda está abriéndose, por favor espera..."
     }
   },
   "settings": {
