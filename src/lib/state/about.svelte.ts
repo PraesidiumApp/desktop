@@ -7,7 +7,7 @@ export class AboutState {
 			"software-licenses",
 			{
 				url: "/software-licenses.html",
-				title: `Praesidium Desktop - ${localeState.labels.about.softwarelicenses}`,
+				title: localeState.labels.about.softwarelicenses,
 				width: 600,
 				height: 700
 			}
