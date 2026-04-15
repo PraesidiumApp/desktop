@@ -1,9 +1,23 @@
 <script lang="ts">
     import { appState, localeState } from "$lib/state/app.svelte";
+	import { available } from "$lib/state/navigation.svelte";
 </script>
 
 {#if appState.session.active}
-	<p>Active session</p>
+	<div class="flex flex-col h-full p-2 text-4xl">
+		<div class="flex-1">
+			{localeState.labels.overview.opened.summary} {appState.session.basename}
+		</div>
+
+		<div class="flex flex-row justify-between">
+			<button onclick={() => 1 +1} class="cursor-pointer font-bold underline">
+				{localeState.labels.overview.opened.close}
+			</button>
+			<a href={available.find((menuItem) => menuItem.name === "Vault")!.href} class="cursor-pointer font-bold underline">
+				{localeState.labels.overview.opened.manage}
+			</a>
+		</div>
+	</div>
 {:else}
 	<div class="flex flex-col h-full text-center items-center justify-center text-4xl p-2 gap-5">
 		{#if !appState.session.readyNew && !appState.session.readyExisting}

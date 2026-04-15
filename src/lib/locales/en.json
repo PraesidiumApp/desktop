@@ -11,6 +11,11 @@
     "vault": "Vault"
   },
   "overview": {
+    "opened": {
+      "summary": "Vault summary",
+      "close": "Close",
+      "manage": "Manage"
+    },
     "unopened": {
       "create_vault": "Create a new vault",
       "open_vault": "Open an existing one",

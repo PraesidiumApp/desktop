@@ -26,6 +26,11 @@
       "cantlaunchempty": "No se puede lanzar una nueva sesión con una ruta o contraseña vacía",
       "creatingvault": "Tu nueva bóveda está siendo creada, por favor espera...",
       "openingvault": "Tu bóveda está abriéndose, por favor espera..."
+    },
+    "opened": {
+      "close": "Cerrar",
+      "manage": "Gestionar",
+      "summary": "Resumen de la bóveda"
     }
   },
   "settings": {

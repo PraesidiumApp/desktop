@@ -4,13 +4,28 @@ import { open } from "@tauri-apps/plugin-dialog"
 import { localeState } from "./app.svelte";
 
 export class SessionState {
-	path = $state("");
-	password = $state("")
-	errorMessage = $state("")
+	_path = $state("");
+	basename = $state("");
+	password = $state("");
+	errorMessage = $state("");
 	loading = $state(false);
 	readyNew = $state(false);
 	readyExisting = $state(false);
 	active = $state(false);
+
+	set path(newPath: string) {
+		this._path = newPath;
+		if (this._path) {
+			const parts = newPath.split(/[\\/]/).filter((segment) => segment);
+			this.basename = parts.pop() !;
+		} else {
+			this.basename = "";
+		}
+	}
+
+	get path(): string {
+		return this._path;
+	}
 
 	reset() {
 		this.path = "";
