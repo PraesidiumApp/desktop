@@ -1,52 +1,14 @@
 {
-  "metadata": {
-    "commit": "Commit",
-    "version": "Version"
-  },
-  "navigation": {
-    "about": "About",
-    "generator": "Generator",
-    "overview": "Overview",
-    "settings": "Settings",
-    "vault": "Vault"
-  },
-  "overview": {
-    "opened": {
-      "summary": "Vault summary",
-      "close": "Close",
-      "manage": "Manage"
-    },
-    "unopened": {
-      "create_vault": "Create a new vault",
-      "open_vault": "Open an existing one",
-      "or": "OR",
-      "newvaultpath": "Your new vault will be created on",
-      "existingvaultpath": "Your vault path is",
-      "select": "Select",
-      "cancel": "Cancel",
-      "continue": "Continue",
-      "praesidiumvault": "Praesidium vault",
-      "withpassword": "With password",
-      "writepasswordhere": "Write your password here",
-      "cantlaunchempty": "Can't launch a new session with an empty path or password",
-      "creatingvault": "Your new vault is being created, please wait...",
-      "openingvault": "Your vault is being opened, please wait..."
-    }
-  },
-  "settings": {
-    "colortheme": {
-      "colortheme": "Color theme",
-      "dark": "Dark",
-      "light": "Light"
-    },
-    "language": {
-      "english": "English",
-      "language": "Language",
-      "spanish": "Spanish"
-    }
-  },
-  "about": {
-    "viewsoftwarelicenses": "View software licenses",
-    "softwarelicenses": "Software licenses"
-  }
+	"errors": {
+		"locale": {
+			"set_preference": "Could not set the current theme as preferred persistently"
+		}
+	},
+	"components": {
+		"navbar": {
+			"vault": "Vault",
+			"generator": "Generator",
+			"about": "About"
+		}
+	}
 }
