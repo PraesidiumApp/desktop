@@ -7,7 +7,11 @@ type Toast = {
 }
 
 class ToasterState {
-	queue = $state<Toast[]>([]);
+	#queue = $state<Toast[]>([]);
+
+	get queue(): Toast[] {
+		return this.#queue;
+	}
 
 	add(kind: ToastKind, message: string) {
 		const id = crypto.randomUUID();

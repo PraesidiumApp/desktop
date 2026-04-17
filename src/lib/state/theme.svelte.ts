@@ -18,7 +18,7 @@ class ThemeState {
 		this.#theme = theme as AllowedTheme;
 	}
 
-	get theme() {
+	get theme(): AllowedTheme {
 		return this.#theme;
 	}
 
