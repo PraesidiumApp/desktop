@@ -20,12 +20,19 @@
 }
 
 :root {
-	/* Light theme */
-	--light-scheme-1: #f7f0f5;
-	--light-scheme-2: #eae7e9;
-	--light-scheme-3: #d2ced1;
-	/* Dark theme */
-	--dark-scheme-1: #100f0f;
-	--dark-scheme-2: #1b191a;
-	--dark-scheme-3: #2d272a;
+	--app-bg: #f8fafc; 
+	--dock-bg: rgba(255, 255, 255, 0.75);
+	--dock-border: rgba(226, 232, 240, 0.8);
+	--text-main: #0f172a;
+	--text-muted: #64748b;
+	--dock-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.04), 
+					0 8px 10px -6px rgba(0, 0, 0, 0.04);
+
+	--app-bg-dark: #09090b; 
+	--dock-bg-dark: rgba(24, 24, 27, 0.6); 
+	--dock-border-dark: rgba(255, 255, 255, 0.1);
+	--text-main-dark: #fafafa;
+	--text-muted-dark: #a1a1aa;
+	--dock-shadow-dark: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 
+						0 8px 10px -6px rgba(0, 0, 0, 0.8);
 }
