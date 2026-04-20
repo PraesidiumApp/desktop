@@ -3,13 +3,13 @@
 	import "../app.css";
 
 	import Navbar from "$lib/components/Navbar.svelte";
-
-	import { localeState } from "$lib/state/locale.svelte";
+    import Toaster from "$lib/components/Toaster.svelte";
 
 	const { children } = $props();
 </script>
 
-<div>
+<div class="min-h-screen bg-(--app-bg) dark:bg-(--app-bg-dark)">
 	<Navbar></Navbar>
 	{@render children()}
+	<Toaster></Toaster>
 </div>
