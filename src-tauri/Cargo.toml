@@ -21,4 +21,5 @@ tauri-build = { version = "2", features = [] }
 [dependencies]
 tauri = { version = "2", features = [] }
 tauri-plugin-dialog = "2"
+tauri-plugin-opener = "2"
 engine = { git = "https://github.com/PraesidiumApp/engine.git", branch = "master" }
