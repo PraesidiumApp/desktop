@@ -1,9 +1,4 @@
 {
-	"errors": {
-		"locale": {
-			"set_preference": "Could not set the current theme as preferred persistently"
-		}
-	},
 	"components": {
 		"navbar": {
 			"vault": "Vault",

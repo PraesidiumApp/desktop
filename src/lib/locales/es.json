@@ -5,10 +5,5 @@
       "generator": "Generador",
       "vault": "Bóveda"
     }
-  },
-  "errors": {
-    "locale": {
-      "set_preference": "No se pudo establecer el tema actual como preferido de forma persistente"
-    }
   }
 }
