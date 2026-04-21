@@ -2,18 +2,26 @@
 	import { localeState } from "$lib/state/locale.svelte";
 	import { themeState } from "$lib/state/theme.svelte";
 	import { openUrl } from "@tauri-apps/plugin-opener";
+	import { page } from "$app/state";
 
 	function toggleTheme() {
-		themeState.theme === "light" ? themeState.theme = "dark" : themeState.theme = "light";
+		themeState.theme = themeState.theme === "light" ? "dark" : "light";
 	}
 
 	function openGithub() {
 		openUrl("https://github.com/PraesidiumApp");
 	}
+
+	function isActive(path: string): boolean {
+		if (path === "/") {
+			return page.url.pathname === "/";
+		}
+		return page.url.pathname.startsWith(path);
+	}
 </script>
 
 <nav class="fixed top-5 left-0 w-full h-30 flex justify-center">
-	<div class="h-full w-[80vw] p-5 bg-(--dock-bg) dark:bg-(--dock-bg-dark) border-(--dock-border) dark:border-(--dock-border-dark) backdrop-blur-lg shadow-(--dock-shadow) dark:shadow-(--dock-shadow-dark) rounded-2xl border-2 flex flex-row gap-10 items-center justify-between">
+	<div class="h-full w-[65vw] p-5 bg-(--dock-bg) dark:bg-(--dock-bg-dark) border-(--dock-border) dark:border-(--dock-border-dark) shadow-(--dock-shadow) dark:shadow-(--dock-shadow-dark) rounded-2xl border-2 flex flex-row gap-10 items-center justify-between">
 		<div class="h-full">
 			<a href="/" class="h-full cursor-pointer">
 				<img alt="Praesidium logo" src="/imgs/praesidium-{themeState.theme}.png" class="aspect-square h-full w-auto">
@@ -22,17 +30,17 @@
 		<div>
 			<ul class="flex flex-row gap-10 font-bold text-4xl">
 				<li>
-					<a href="/">
+					<a href="/" class="{isActive("/") ? "underline" : "text-(--text-muted) dark:text-(--text-muted-dark)"} underline-offset-5 hover:scale-110 transition-all duration-1000 ease-out hover:drop-shadow-[0_0_20px_rgba(0,0,0,1)] dark:hover:drop-shadow-[0_0_20px_rgba(255,255,255,0.7)]">
 						{localeState.labels.components.navbar.vault}
 					</a>
 				</li>
 				<li>
-					<a href="/generator">
+					<a href="/generator" class="{isActive("/generator") ? "underline" : "text-(--text-muted) dark:text-(--text-muted-dark)"} underline-offset-5 hover:scale-110 transition-all duration-1000 ease-out hover:drop-shadow-[0_0_20px_rgba(0,0,0,1)] dark:hover:drop-shadow-[0_0_20px_rgba(255,255,255,0.7)]">
 						{localeState.labels.components.navbar.generator}
 					</a>
 				</li>
 				<li>
-					<a href="/about">
+					<a href="/about" class="{isActive("/about") ? "underline" : "text-(--text-muted) dark:text-(--text-muted-dark)"} underline-offset-5 hover:scale-110 transition-all duration-1000 ease-out hover:drop-shadow-[0_0_20px_rgba(0,0,0,1)] dark:hover:drop-shadow-[0_0_20px_rgba(255,255,255,0.7)]">
 						{localeState.labels.components.navbar.about}
 					</a>
 				</li>
