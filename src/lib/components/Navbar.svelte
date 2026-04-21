@@ -46,7 +46,7 @@
 				</li>
 			</ul>
 		</div>
-		<div class="h-1/2 flex flex-row gap-5">
+		<div class="h-[70%] flex flex-row gap-5">
 			<button title="Open Praesidium's GitHub" class="h-full cursor-pointer" onclick={openGithub}>
 				<img alt="GitHub logo" src="/imgs/github-{themeState.theme}.svg" class="aspect-square h-full w-auto">
 			</button>
