@@ -7,11 +7,12 @@
 
 	function toggleTheme() {
 		themeState.theme = themeState.theme === "light" ? "dark" : "light";
+		toasterState.add("info", "colortheme_changed");
 	}
 
 	async function openGithub() {
 		await openUrl("https://github.com/PraesidiumApp");
-		toasterState.add("info", localeState.labels.components.toaster.github_opening);
+		toasterState.add("info", "github_opened");
 	}
 
 	function isActive(path: string): boolean {
