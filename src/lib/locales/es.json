@@ -3,7 +3,9 @@
     "navbar": {
       "about": "Acerca de",
       "generator": "Generador",
-      "vault": "Bóveda"
+      "vault": "Bóveda",
+      "english": "Inglés",
+      "spanish": "Español"
     }
   }
 }

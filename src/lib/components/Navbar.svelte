@@ -21,7 +21,7 @@
 </script>
 
 <nav class="fixed top-5 left-0 w-full h-30 flex justify-center">
-	<div class="h-full w-[65vw] max-w-300 p-5 bg-(--dock-bg) dark:bg-(--dock-bg-dark) border-(--dock-border) dark:border-(--dock-border-dark) shadow-(--dock-shadow) dark:shadow-(--dock-shadow-dark) rounded-2xl border-2 flex flex-row gap-10 items-center justify-between">
+	<div class="h-full w-[95vw] max-w-300 p-5 bg-(--dock-bg) dark:bg-(--dock-bg-dark) border-(--dock-border) dark:border-(--dock-border-dark) shadow-(--dock-shadow) dark:shadow-(--dock-shadow-dark) rounded-2xl border-2 flex flex-row gap-10 items-center justify-between">
 		<div class="h-full">
 			<a href="/" class="h-full cursor-pointer">
 				<img alt="Praesidium logo" src="/imgs/praesidium-{themeState.theme}.png" class="aspect-square h-full w-auto">
@@ -53,6 +53,17 @@
 			<button title="Toggle app theme" class="h-full cursor-pointer" onclick={toggleTheme}>
 				<img alt="App theme toggler" src="/imgs/colortheme-{themeState.theme}.svg" class="aspect-square h-full w-auto">
 			</button>
+			<select bind:value={
+				() => localeState.locale,
+				(locale) => localeState.set(locale)
+			} class="appearance-none p-3 border-(--dock-border) dark:border-(--dock-border-dark) rounded-xl border-2 text-center">
+				<option value="en">
+					{localeState.labels.components.navbar.english} 🇺🇸
+				</option>
+				<option value="es">
+					{localeState.labels.components.navbar.spanish} 🇪🇸
+				</option>
+			</select>
 		</div>
 	</div>
 </nav>

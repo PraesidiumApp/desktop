@@ -22,6 +22,10 @@ class LocaleState {
 		return this.#labels;
 	}
 
+	get locale(): AllowedLocale {
+		return this.#locale;
+	}
+
 	async set(locale: string | null) {
 		if (!(this.#isValidLocale(locale))) {
 			return;

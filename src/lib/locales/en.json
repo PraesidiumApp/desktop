@@ -3,7 +3,9 @@
 		"navbar": {
 			"vault": "Vault",
 			"generator": "Generator",
-			"about": "About"
+			"about": "About",
+			"english": "English",
+			"spanish": "Spanish"
 		}
 	}
 }
