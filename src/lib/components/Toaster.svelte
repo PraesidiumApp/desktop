@@ -1,7 +1,7 @@
 <script lang="ts">
     import { themeState } from "$lib/state/theme.svelte";
     import { toasterState } from "$lib/state/toaster.svelte";
-    import { slide } from "svelte/transition";
+    import { fade, slide } from "svelte/transition";
 
 	const borderColors = {
 		info: "border-blue-700",
@@ -10,9 +10,9 @@
 	};
 </script>
 
-<div class="fixed bottom-5 right-5 flex flex-col-reverse gap-2 max-w-[30vw]">
-	{#each toasterState.queue as toast}
-		<div class="flex flex-row items-center justify-center bg-(--dock-bg) dark:bg-(--dock-bg-dark) {borderColors[toast.kind]} border-2 rounded-2xl p-10 relative" transition:slide>
+<div class="fixed bottom-5 right-5 flex flex-col gap-2 max-w-[30vw]">
+	{#each toasterState.queue as toast (toast.id)}
+		<div class="flex flex-row items-center justify-center bg-(--dock-bg) dark:bg-(--dock-bg-dark) {borderColors[toast.kind]} border-2 rounded-2xl p-10 relative" in:slide out:fade>
 			<p class="text-xl text-center">
 				{toast.message}
 			</p>
