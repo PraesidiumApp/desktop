@@ -1,15 +1,16 @@
 {
-	"components": {
-		"navbar": {
-			"vault": "Vault",
-			"generator": "Generator",
-			"about": "About",
-			"english": "English",
-			"spanish": "Spanish"
-		},
-		"toaster": {
-			"github_opened": "Praesidium's GitHub page has been opened in your system's default web browser",
-			"colortheme_changed": "Your preferred color theme has been updated"
-		}
-	}
+  "components": {
+    "navbar": {
+      "vault": "Vault",
+      "generator": "Generator",
+      "about": "About",
+      "english": "English",
+      "spanish": "Spanish"
+    },
+    "toaster": {
+      "github_opened": "Praesidium's GitHub page has been opened in your system's default web browser",
+      "colortheme_changed": "Your preferred color theme has been updated",
+      "locale_changed": "Your preferred language has been updated"
+    }
+  }
 }

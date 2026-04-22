@@ -4,6 +4,7 @@
     import { toasterState } from "$lib/state/toaster.svelte";
 	import { openUrl } from "@tauri-apps/plugin-opener";
 	import { page } from "$app/state";
+	import type { AllowedLocale } from "../state/locale.svelte";
 
 	function toggleTheme() {
 		themeState.theme = themeState.theme === "light" ? "dark" : "light";
@@ -13,6 +14,11 @@
 	async function openGithub() {
 		await openUrl("https://github.com/PraesidiumApp");
 		toasterState.add("info", "github_opened");
+	}
+
+	async function setLocale(locale: AllowedLocale) {
+		await localeState.set(locale);
+		toasterState.add("info", "locale_changed");
 	}
 
 	function isActive(path: string): boolean {
@@ -58,7 +64,7 @@
 			</button>
 			<select bind:value={
 				() => localeState.locale,
-				(locale) => localeState.set(locale)
+				(locale) => setLocale(locale)
 			} class="appearance-none p-3 border-(--dock-border) dark:border-(--dock-border-dark) rounded-xl border-2 text-center">
 				<option value="en">
 					{localeState.labels.components.navbar.english} 🇺🇸

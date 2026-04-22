@@ -3,7 +3,7 @@ import en from "../locales/en.json";
 type LocaleShape = typeof en;
 
 const ALLOWED_LOCALES = ["en", "es"] as const;
-type AllowedLocale = typeof ALLOWED_LOCALES[number];
+export type AllowedLocale = typeof ALLOWED_LOCALES[number];
 
 class LocaleState {
 	#locales: Record<string, LocaleShape> = {

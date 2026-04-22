@@ -9,7 +9,8 @@
     },
     "toaster": {
       "github_opened": "La página de GitHub de Praesidium se ha abierto en el navegador web por defecto de tu sistema",
-      "colortheme_changed": "Tu tema de color preferido ha sido actualizado"
+      "colortheme_changed": "Tu tema de color preferido ha sido actualizado",
+      "locale_changed": "Tu idioma preferido ha sido actualizado"
     }
   }
 }
