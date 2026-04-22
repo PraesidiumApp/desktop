@@ -6,6 +6,9 @@
 			"about": "About",
 			"english": "English",
 			"spanish": "Spanish"
+		},
+		"toaster": {
+			"github_opening": "Praesidium's GitHub page has been opened in your system's default web browser"
 		}
 	}
 }

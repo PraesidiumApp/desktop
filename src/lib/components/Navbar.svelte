@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { localeState } from "$lib/state/locale.svelte";
 	import { themeState } from "$lib/state/theme.svelte";
+    import { toasterState } from "$lib/state/toaster.svelte";
 	import { openUrl } from "@tauri-apps/plugin-opener";
 	import { page } from "$app/state";
 
@@ -8,8 +9,9 @@
 		themeState.theme = themeState.theme === "light" ? "dark" : "light";
 	}
 
-	function openGithub() {
-		openUrl("https://github.com/PraesidiumApp");
+	async function openGithub() {
+		await openUrl("https://github.com/PraesidiumApp");
+		toasterState.add("info", localeState.labels.components.toaster.github_opening);
 	}
 
 	function isActive(path: string): boolean {

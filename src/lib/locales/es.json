@@ -6,6 +6,9 @@
       "vault": "Bóveda",
       "english": "Inglés",
       "spanish": "Español"
+    },
+    "toaster": {
+      "github_opening": "La página de GitHub de Praesidium se ha abierto en el navegador web por defecto de tu sistema"
     }
   }
 }
