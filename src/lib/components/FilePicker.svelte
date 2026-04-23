@@ -1,6 +1,8 @@
 <script lang="ts">
     import { localeState } from "$lib/state/locale.svelte";
     import { themeState } from "$lib/state/theme.svelte";
+	import { open, save } from "@tauri-apps/plugin-dialog";
+    import { slide } from "svelte/transition";
 
 	interface Props {
 		pickerType: "new" | "open"
@@ -25,18 +27,54 @@
 			filePath = getSelectLabel();
 		}
 	});
+
+	async function pathDialog(): Promise<string | null> {
+		if (pickerType === "new") {
+			return await save({
+				defaultPath: ".prsd",
+				filters: [
+					{
+						extensions: ["prsd"],
+						name: localeState.labels.components.file_picker.dialog_filter_name
+					}
+				],
+				title: localeState.labels.components.file_picker.dialog_window_title_create
+			});
+		} else {
+			return await open({
+				defaultPath: ".prsd",
+				directory: false,
+				filters: [
+					{
+						extensions: ["prsd"],
+						name: localeState.labels.components.file_picker.dialog_filter_name
+					}
+				],
+				multiple: false,
+				title: localeState.labels.components.file_picker.dialog_window_title_open
+			});
+		}
+	}
+
+	async function selectPath() {
+		let dialogPath = await pathDialog();
+		if (dialogPath) {
+			filePathTouched = true;
+			filePath = dialogPath;
+		}
+	}
 </script>
 
-<div class="flex flex-row rounded-2xl border-2 bg-(--dock-bg) dark:bg-(--dock-bg-dark) border-(--dock-border) dark:border-(--dock-border-dark) p-2 gap-5">
+<div class="flex flex-row rounded-2xl border-2 bg-(--dock-bg) dark:bg-(--dock-bg-dark) border-(--dock-border) dark:border-(--dock-border-dark) p-2 gap-5" in:slide>
 	<input bind:value={
 		() => filePath,
 		(path) => {
 			filePathTouched = true;
 			filePath = path;
 		}
-	} class="text-xl text-(--text-muted) dark:text-(--text-muted-dark) w-100">
-	<button class="flex flex-row cursor-pointer h-10">
-		<p class="flex flex-row font-bold justify-center items-center">
+	} class="text-xl text-(--text-muted) dark:text-(--text-muted-dark) w-150" type="text">
+	<button class="flex flex-row cursor-pointer h-10 gap-2" onclick={async () => await selectPath()}>
+		<p class="flex flex-row font-bold text-3xl justify-center items-center">
 			{localeState.labels.components.file_picker.select}
 		</p>
 		<img alt="Folder icon" src="/imgs/folder-{themeState.theme}.svg" class="aspect-square h-full w-auto">

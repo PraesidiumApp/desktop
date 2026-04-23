@@ -13,9 +13,21 @@
       "locale_changed": "Tu idioma preferido ha sido actualizado"
     },
     "file_picker": {
-      "select_location_existing_vault": "Selecciona la ubicación de tu bóveda existente",
-      "select_location_new_vault": "Selecciona la ubicación para tu nueva bóveda",
-      "select": "Seleccionar"
+      "select_location_existing_vault": "Escribe o selecciona la ubicación de tu bóveda",
+      "select_location_new_vault": "Escribe o selecciona la ubicación para tu nueva bóveda",
+      "select": "Seleccionar",
+      "dialog_filter_name": "Bóveda de Praesidium",
+      "dialog_window_title_open": "Abre una bóveda existente",
+      "dialog_window_title_create": "Crea una nueva bóveda"
+    }
+  },
+  "pages": {
+    "vault": {
+      "a_vault": "una bóveda?",
+      "create": "Crear",
+      "do_you_want_to": "¿Qué quieres hacer,",
+      "open": "Abrir",
+      "or": "o"
     }
   }
 }

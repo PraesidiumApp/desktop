@@ -13,9 +13,21 @@
       "locale_changed": "Your preferred language has been updated"
     },
     "file_picker": {
-      "select_location_new_vault": "Select the location for your new vault",
-      "select_location_existing_vault": "Select the location of your existing vault",
-      "select": "Select"
+      "select_location_new_vault": "Write or select the path for your new vault",
+      "select_location_existing_vault": "Write or select the path for your vault",
+      "select": "Select",
+      "dialog_filter_name": "Praesidium vault",
+      "dialog_window_title_open": "Open an existing vault",
+      "dialog_window_title_create": "Create a new vault"
+    }
+  },
+  "pages": {
+    "vault": {
+      "do_you_want_to": "Do you want to",
+      "create": "Create",
+      "or": "or",
+      "open": "Open",
+      "a_vault": "a vault?"
     }
   }
 }
