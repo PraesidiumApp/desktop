@@ -9,12 +9,16 @@ class Toast {
 	kind: ToastKind;
 	#messageNode: ValidMessageNode;
 	message: string;
+	extra = "";
 
-	constructor(id: UUID, kind: ToastKind, messageNode: ValidMessageNode) {
+	constructor(id: UUID, kind: ToastKind, messageNode: ValidMessageNode, extra?: string) {
 		this.id = id;
 		this.kind = kind;
 		this.#messageNode = messageNode;
 		this.message = $derived(localeState.labels.components.toaster[this.#messageNode]);
+		if (extra) {
+			this.extra = extra;
+		}
 	}
 }
 
@@ -25,9 +29,13 @@ class ToasterState {
 		return this.#queue;
 	}
 
-	add(kind: ToastKind, messageNode: ValidMessageNode) {
+	add(kind: ToastKind, messageNode: ValidMessageNode, extra?: string) {
 		const newToastId = crypto.randomUUID();
-		this.queue.push(new Toast(newToastId, kind, messageNode));
+		if (extra) {
+			this.queue.push(new Toast(newToastId, kind, messageNode, extra));
+		} else {
+			this.queue.push(new Toast(newToastId, kind, messageNode));
+		}
 		setTimeout(() => this.remove(newToastId), 10000);
 	}
 

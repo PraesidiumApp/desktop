@@ -12,14 +12,14 @@
 			{localeState.labels.pages.vault.do_you_want_to}
 		</p>
 		<p>
-			<button class="cursor-pointer font-bold" onclick={() => {
+			<button class="cursor-pointer font-bold rounded-2xl border-2 bg-(--dock-bg) dark:bg-(--dock-bg-dark) border-(--dock-border) dark:border-(--dock-border-dark) p-2" onclick={() => {
 				newOrOpenChoice = "new";
 				filePickerReady = true;
 			}}>
 				{localeState.labels.pages.vault.create}
 			</button>
 			{localeState.labels.pages.vault.or}
-			<button class="cursor-pointer font-bold" onclick={() => {
+			<button class="cursor-pointer font-bold rounded-2xl border-2 bg-(--dock-bg) dark:bg-(--dock-bg-dark) border-(--dock-border) dark:border-(--dock-border-dark) p-2" onclick={() => {
 				newOrOpenChoice = "open";
 				filePickerReady = true;
 			}}>

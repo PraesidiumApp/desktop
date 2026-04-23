@@ -10,7 +10,8 @@
     "toaster": {
       "github_opened": "La página de GitHub de Praesidium se ha abierto en el navegador web por defecto de tu sistema",
       "colortheme_changed": "Tu tema de color preferido ha sido actualizado",
-      "locale_changed": "Tu idioma preferido ha sido actualizado"
+      "locale_changed": "Tu idioma preferido ha sido actualizado",
+      "backend_error": "El motor devolvió un error:"
     },
     "file_picker": {
       "select_location_existing_vault": "Escribe o selecciona la ubicación de tu bóveda",
@@ -18,10 +19,13 @@
       "select": "Seleccionar",
       "dialog_filter_name": "Bóveda de Praesidium",
       "dialog_window_title_open": "Abre una bóveda existente",
-      "dialog_window_title_create": "Crea una nueva bóveda"
+      "dialog_window_title_create": "Crea una nueva bóveda",
+      "continue": "Continuar",
+      "write_password": "Escribe la contraseña maestra para esta bóveda"
     },
     "waiter": {
-      "file_dialog": "Procede con el diálogo de archivo para continuar"
+      "file_dialog": "Procede con el diálogo de archivo para continuar",
+      "new_session": "Tu sesión está siendo creada, por favor espera"
     }
   },
   "pages": {

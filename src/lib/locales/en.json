@@ -10,7 +10,8 @@
     "toaster": {
       "github_opened": "Praesidium's GitHub page has been opened in your system's default web browser",
       "colortheme_changed": "Your preferred color theme has been updated",
-      "locale_changed": "Your preferred language has been updated"
+      "locale_changed": "Your preferred language has been updated",
+      "backend_error": "The backend returned an error:"
     },
     "file_picker": {
       "select_location_new_vault": "Write or select the path for your new vault",
@@ -18,10 +19,13 @@
       "select": "Select",
       "dialog_filter_name": "Praesidium vault",
       "dialog_window_title_open": "Open an existing vault",
-      "dialog_window_title_create": "Create a new vault"
+      "dialog_window_title_create": "Create a new vault",
+      "continue": "Continue",
+      "write_password": "Write the master password for this vault"
     },
     "waiter": {
-      "file_dialog": "Proceed with the file dialog to continue"
+      "file_dialog": "Proceed with the file dialog to continue",
+      "new_session": "Your session is being created, please wait"
     }
   },
   "pages": {

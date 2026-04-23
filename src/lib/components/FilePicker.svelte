@@ -3,7 +3,10 @@
     import { themeState } from "$lib/state/theme.svelte";
     import { waiterState } from "$lib/state/waiter.svelte";
 	import { open, save } from "@tauri-apps/plugin-dialog";
+	import { invoke } from "@tauri-apps/api/core";
     import { slide } from "svelte/transition";
+    import { toasterState } from "$lib/state/toaster.svelte";
+    import { sessionState } from "$lib/state/session.svelte";
 
 	interface Props {
 		pickerType: "new" | "open"
@@ -68,20 +71,60 @@
 			filePath = dialogPath;
 		}
 	}
+
+	async function newSession() {
+		// Block the UI while the session is created
+		waiterState.message = localeState.labels.components.waiter.new_session;
+		waiterState.active = true;
+		try {
+			await invoke("new_session");
+			waiterState.active = false;
+			sessionState.active = true;
+		} catch (backendError) {
+			waiterState.active = false;
+			toasterState.add("error", "backend_error", backendError as string)
+		}
+	}
+
+	let password = $state(localeState.labels.components.file_picker.write_password);
+	let passwordTouched = $state(false);
+	// The $derived.by() rune can't be applied on this case because we need to handle password staying the same if the locale changes but the user has touched it, with $derived.by() password would become undefined so the user's master password would be erased on locale change
+	$effect(() => {
+		if (!passwordTouched) {
+			password = localeState.labels.components.file_picker.write_password;
+		}
+	});
 </script>
 
-<div class="flex flex-row rounded-2xl border-2 bg-(--dock-bg) dark:bg-(--dock-bg-dark) border-(--dock-border) dark:border-(--dock-border-dark) p-2 gap-5" in:slide>
-	<input bind:value={
-		() => filePath,
-		(path) => {
-			filePathTouched = true;
-			filePath = path;
-		}
-	} class="text-xl text-(--text-muted) dark:text-(--text-muted-dark) w-150" type="text">
-	<button class="flex flex-row cursor-pointer h-10 gap-2" onclick={async () => await selectPath()}>
-		<p class="flex flex-row font-bold text-3xl justify-center items-center">
-			{localeState.labels.components.file_picker.select}
+<div class="flex flex-col gap-5 items-center w-180" in:slide>
+	<div class="flex flex-row rounded-2xl border-2 bg-(--dock-bg) dark:bg-(--dock-bg-dark) border-(--dock-border) dark:border-(--dock-border-dark) p-2 gap-5 w-full">
+		<input bind:value={
+			() => filePath,
+			(path) => {
+				filePathTouched = true;
+				filePath = path;
+			}
+		} class="text-xl text-(--text-muted) dark:text-(--text-muted-dark) grow" type="text">
+		<button class="flex flex-row justify-center items-center cursor-pointer h-10 gap-2" onclick={() => selectPath()}>
+			<p class="font-bold text-3xl">
+				{localeState.labels.components.file_picker.select}
+			</p>
+			<img alt="Folder icon" src="/imgs/folder-{themeState.theme}.svg" class="aspect-square h-full w-auto">
+		</button>
+	</div>
+	<div class="flex flex-row rounded-2xl border-2 bg-(--dock-bg) dark:bg-(--dock-bg-dark) border-(--dock-border) dark:border-(--dock-border-dark) p-2 gap-5 w-full h-15">
+		<input bind:value={
+			() => password,
+			(passwd) => {
+				passwordTouched = true;
+				password = passwd;
+			}
+		} class="text-xl text-(--text-muted) dark:text-(--text-muted-dark) w-full" type="text">
+	</div>
+	<button class="flex flex-row justify-center items-center h-15 w-fit cursor-pointer gap-2" onclick={() => newSession()}>
+		<p class="font-bold text-4xl">
+			{localeState.labels.components.file_picker.continue}
 		</p>
-		<img alt="Folder icon" src="/imgs/folder-{themeState.theme}.svg" class="aspect-square h-full w-auto">
+		<img alt="Continue icon" src="/imgs/continue-{themeState.theme}.svg" class="aspect-square h-full w-auto">
 	</button>
 </div>
