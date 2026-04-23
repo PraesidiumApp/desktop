@@ -76,13 +76,30 @@
 		// Block the UI while the session is created
 		waiterState.message = localeState.labels.components.waiter.new_session;
 		waiterState.active = true;
-		try {
-			await invoke("new_session");
+		if (pickerType === "new" && filePathTouched && passwordTouched) {
+			try {
+				await invoke("new_session", { path: filePath, password: password });
+				waiterState.active = false;
+				sessionState.active = true;
+			} catch (backendError) {
+				waiterState.active = false;
+				toasterState.add("error", "backend_error", backendError as string)
+			}
+		} else if (pickerType === "open" && filePathTouched && passwordTouched) {
+			try {
+				// Not implemented yet
+				waiterState.active = false;
+				toasterState.add("error", "backend_error", "opening sessions are not implemented yet");
+			} catch (backendError) {
+				waiterState.active = false;
+				toasterState.add("error", "backend_error", backendError as string)
+			}
+		} else if (!filePathTouched) {
 			waiterState.active = false;
-			sessionState.active = true;
-		} catch (backendError) {
+			toasterState.add("warning", "specify_path");
+		} else if (!passwordTouched) {
 			waiterState.active = false;
-			toasterState.add("error", "backend_error", backendError as string)
+			toasterState.add("warning", "specify_password");
 		}
 	}
 
@@ -112,7 +129,7 @@
 			<img alt="Folder icon" src="/imgs/folder-{themeState.theme}.svg" class="aspect-square h-full w-auto">
 		</button>
 	</div>
-	<div class="flex flex-row rounded-2xl border-2 bg-(--dock-bg) dark:bg-(--dock-bg-dark) border-(--dock-border) dark:border-(--dock-border-dark) p-2 gap-5 w-full h-15">
+	<div class="flex flex-row rounded-2xl border-2 bg-(--dock-bg) dark:bg-(--dock-bg-dark) border-(--dock-border) dark:border-(--dock-border-dark) p-2 w-full h-15">
 		<input bind:value={
 			() => password,
 			(passwd) => {
@@ -121,7 +138,7 @@
 			}
 		} class="text-xl text-(--text-muted) dark:text-(--text-muted-dark) w-full" type="text">
 	</div>
-	<button class="flex flex-row justify-center items-center h-15 w-fit cursor-pointer gap-2" onclick={() => newSession()}>
+	<button class="flex flex-row justify-center items-center h-15 w-fit cursor-pointer gap-2 rounded-2xl border-2 bg-(--dock-bg) dark:bg-(--dock-bg-dark) border-(--dock-border) dark:border-(--dock-border-dark) p-2" onclick={() => newSession()}>
 		<p class="font-bold text-4xl">
 			{localeState.labels.components.file_picker.continue}
 		</p>

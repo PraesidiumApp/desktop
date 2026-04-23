@@ -11,7 +11,9 @@
       "github_opened": "La página de GitHub de Praesidium se ha abierto en el navegador web por defecto de tu sistema",
       "colortheme_changed": "Tu tema de color preferido ha sido actualizado",
       "locale_changed": "Tu idioma preferido ha sido actualizado",
-      "backend_error": "El motor devolvió un error:"
+      "backend_error": "El motor devolvió un error:",
+      "specify_path": "Debes especificar una ruta de archivo antes de crear una nueva sesión",
+      "specify_password": "Debes especificar una contraseña maestra antes de crear una nueva sesión"
     },
     "file_picker": {
       "select_location_existing_vault": "Escribe o selecciona la ubicación de tu bóveda",
