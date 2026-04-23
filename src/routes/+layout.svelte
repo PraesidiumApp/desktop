@@ -4,6 +4,8 @@
 
 	import Navbar from "$lib/components/Navbar.svelte";
     import Toaster from "$lib/components/Toaster.svelte";
+    import Waiter from "$lib/components/Waiter.svelte";
+    import { waiterState } from "$lib/state/waiter.svelte";
 
 	const { children } = $props();
 </script>
@@ -12,4 +14,7 @@
 	<Navbar></Navbar>
 	{@render children()}
 	<Toaster></Toaster>
+	{#if waiterState.active}
+		<Waiter></Waiter>
+	{/if}
 </main>

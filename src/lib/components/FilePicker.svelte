@@ -1,6 +1,7 @@
 <script lang="ts">
     import { localeState } from "$lib/state/locale.svelte";
     import { themeState } from "$lib/state/theme.svelte";
+    import { waiterState } from "$lib/state/waiter.svelte";
 	import { open, save } from "@tauri-apps/plugin-dialog";
     import { slide } from "svelte/transition";
 
@@ -57,7 +58,10 @@
 	}
 
 	async function selectPath() {
+		// Block the UI while the dialog is active
+		waiterState.active = true;
 		let dialogPath = await pathDialog();
+		waiterState.active = false;
 		if (dialogPath) {
 			filePathTouched = true;
 			filePath = dialogPath;
