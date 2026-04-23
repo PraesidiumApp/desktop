@@ -19,6 +19,9 @@
       "dialog_filter_name": "Praesidium vault",
       "dialog_window_title_open": "Open an existing vault",
       "dialog_window_title_create": "Create a new vault"
+    },
+    "waiter": {
+      "file_dialog": "Proceed with the file dialog to continue"
     }
   },
   "pages": {

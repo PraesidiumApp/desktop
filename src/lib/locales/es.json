@@ -19,6 +19,9 @@
       "dialog_filter_name": "Bóveda de Praesidium",
       "dialog_window_title_open": "Abre una bóveda existente",
       "dialog_window_title_create": "Crea una nueva bóveda"
+    },
+    "waiter": {
+      "file_dialog": "Procede con el diálogo de archivo para continuar"
     }
   },
   "pages": {

@@ -59,6 +59,7 @@
 
 	async function selectPath() {
 		// Block the UI while the dialog is active
+		waiterState.message = localeState.labels.components.waiter.file_dialog;
 		waiterState.active = true;
 		let dialogPath = await pathDialog();
 		waiterState.active = false;
