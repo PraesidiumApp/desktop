@@ -12,7 +12,7 @@
 
 <div class="fixed bottom-5 right-5 flex flex-col gap-2 max-w-[30vw]">
 	{#each toasterState.queue as toast (toast.id)}
-		<div class="flex flex-row items-center justify-center bg-(--dock-bg) dark:bg-(--dock-bg-dark) {borderColors[toast.kind]} border-2 rounded-2xl p-10 relative" in:slide out:fade>
+		<div class="flex flex-row items-center justify-center bg-(--dock-bg) dark:bg-(--dock-bg-dark) {borderColors[toast.kind]} border-2 rounded-2xl p-10 relative backdrop-blur-sm" in:slide out:fade>
 			<p class="text-xl text-center">
 				{toast.message}
 			</p>
