@@ -8,8 +8,8 @@
 	const { children } = $props();
 </script>
 
-<div class="min-h-screen bg-(--app-bg) dark:bg-(--app-bg-dark) text-(--text-main) dark:text-(--text-main-dark) font-[LeagueSpartan] transition-all duration-1000 ease-out">
+<main class="bg-(--app-bg) dark:bg-(--app-bg-dark) text-(--text-main) dark:text-(--text-main-dark) font-[LeagueSpartan] flex flex-col min-h-screen transition-all duration-1000 ease-out">
 	<Navbar></Navbar>
 	{@render children()}
 	<Toaster></Toaster>
-</div>
+</main>

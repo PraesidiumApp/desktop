@@ -11,6 +11,11 @@
       "github_opened": "La página de GitHub de Praesidium se ha abierto en el navegador web por defecto de tu sistema",
       "colortheme_changed": "Tu tema de color preferido ha sido actualizado",
       "locale_changed": "Tu idioma preferido ha sido actualizado"
+    },
+    "file_picker": {
+      "select_location_existing_vault": "Selecciona la ubicación de tu bóveda existente",
+      "select_location_new_vault": "Selecciona la ubicación para tu nueva bóveda",
+      "select": "Seleccionar"
     }
   }
 }

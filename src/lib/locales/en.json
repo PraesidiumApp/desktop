@@ -11,6 +11,11 @@
       "github_opened": "Praesidium's GitHub page has been opened in your system's default web browser",
       "colortheme_changed": "Your preferred color theme has been updated",
       "locale_changed": "Your preferred language has been updated"
+    },
+    "file_picker": {
+      "select_location_new_vault": "Select the location for your new vault",
+      "select_location_existing_vault": "Select the location of your existing vault",
+      "select": "Select"
     }
   }
 }
