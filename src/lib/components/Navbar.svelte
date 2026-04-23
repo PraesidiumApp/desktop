@@ -30,7 +30,7 @@
 </script>
 
 <nav class="fixed top-5 left-0 w-full h-30 flex justify-center">
-	<div class="h-full w-[95vw] max-w-300 p-5 bg-(--dock-bg) dark:bg-(--dock-bg-dark) border-(--dock-border) dark:border-(--dock-border-dark) shadow-(--dock-shadow) dark:shadow-(--dock-shadow-dark) rounded-2xl border-2 flex flex-row gap-10 items-center justify-between">
+	<div class="h-full w-[95vw] max-w-300 p-5 bg-(--dock-bg) dark:bg-(--dock-bg-dark) border-(--dock-border) dark:border-(--dock-border-dark) shadow-(--dock-shadow) dark:shadow-(--dock-shadow-dark) rounded-2xl border-2 flex flex-row gap-10 items-center justify-between backdrop-blur-sm">
 		<div class="h-full">
 			<a href="/" class="h-full cursor-pointer">
 				<img alt="Praesidium logo" src="/imgs/praesidium-{themeState.theme}.png" class="aspect-square h-full w-auto">
