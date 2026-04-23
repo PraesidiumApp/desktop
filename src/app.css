@@ -22,7 +22,7 @@
 :root {
 	--app-bg: #f8fafc; 
 	--dock-bg: rgba(255, 255, 255, 0.75);
-	--dock-border: rgba(226, 232, 240, 0.8);
+	--dock-border: rgba(226, 232, 240, 1);
 	--text-main: #0f172a;
 	--text-muted: #64748b;
 	--dock-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.04), 
