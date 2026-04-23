@@ -28,7 +28,7 @@ class ToasterState {
 	add(kind: ToastKind, messageNode: ValidMessageNode) {
 		const newToastId = crypto.randomUUID();
 		this.queue.push(new Toast(newToastId, kind, messageNode));
-		setTimeout(() => this.remove(newToastId), 5000);
+		setTimeout(() => this.remove(newToastId), 10000);
 	}
 
 	remove(id: UUID) {
