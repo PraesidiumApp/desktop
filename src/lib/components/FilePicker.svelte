@@ -87,9 +87,9 @@
 			}
 		} else if (pickerType === "open" && filePathTouched && passwordTouched) {
 			try {
-				// Not implemented yet
+				await invoke("open_session", { path: filePath, password: password });
 				waiterState.active = false;
-				toasterState.add("error", "backend_error", "opening sessions are not implemented yet");
+				sessionState.active = true;
 			} catch (backendError) {
 				waiterState.active = false;
 				toasterState.add("error", "backend_error", backendError as string)
