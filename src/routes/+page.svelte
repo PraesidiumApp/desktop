@@ -8,7 +8,10 @@
 </script>
 
 {#if sessionState.active}
-	<div>
+	<div class="flex flex-col pt-40 grow text-4xl gap-5">
+		<div>
+			
+		</div>
 		<p>
 			Active
 		</p>
