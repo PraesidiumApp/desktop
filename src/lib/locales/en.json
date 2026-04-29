@@ -13,8 +13,7 @@
       "locale_changed": "Your preferred language has been updated",
       "backend_error": "The backend returned an error:",
       "specify_path": "You must specify a file path before creating a new session",
-      "specify_password": "You must specify a master password before creating a new session",
-      "reading_items": "Scanning vault for items..."
+      "specify_password": "You must specify a master password before creating a new session"
     },
     "file_picker": {
       "select_location_new_vault": "Write or select the path for your new vault",

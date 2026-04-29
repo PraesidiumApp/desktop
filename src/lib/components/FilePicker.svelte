@@ -90,8 +90,6 @@
 				await invoke("open_session", { path: filePath, password: password });
 				waiterState.active = false;
 				sessionState.active = true;
-				invoke("get_items");
-				toasterState.add("info", "reading_items");
 			} catch (backendError) {
 				waiterState.active = false;
 				toasterState.add("error", "backend_error", backendError as string)
