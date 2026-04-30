@@ -76,28 +76,32 @@
 		// Block the UI while the session is created
 		waiterState.message = localeState.labels.components.waiter.new_session;
 		waiterState.active = true;
-		if (pickerType === "new" && filePathTouched && passwordTouched) {
+		if (pickerType === "new" && filePathTouched && passwordTouched && filePath && password) {
 			try {
 				await invoke("new_session", { path: filePath, password: password });
 				waiterState.active = false;
 				sessionState.active = true;
+				sessionState.fetchItems();
+				toasterState.add("info", "scanning_for_items");
 			} catch (backendError) {
 				waiterState.active = false;
 				toasterState.add("error", "backend_error", backendError as string)
 			}
-		} else if (pickerType === "open" && filePathTouched && passwordTouched) {
+		} else if (pickerType === "open" && filePathTouched && passwordTouched && filePath && password) {
 			try {
 				await invoke("open_session", { path: filePath, password: password });
 				waiterState.active = false;
 				sessionState.active = true;
+				sessionState.fetchItems();
+				toasterState.add("info", "scanning_for_items");
 			} catch (backendError) {
 				waiterState.active = false;
 				toasterState.add("error", "backend_error", backendError as string)
 			}
-		} else if (!filePathTouched) {
+		} else if (!filePathTouched || !filePath) {
 			waiterState.active = false;
 			toasterState.add("warning", "specify_path");
-		} else if (!passwordTouched) {
+		} else if (!passwordTouched || !password) {
 			waiterState.active = false;
 			toasterState.add("warning", "specify_password");
 		}

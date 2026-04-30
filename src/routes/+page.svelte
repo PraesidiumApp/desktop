@@ -9,12 +9,20 @@
 
 {#if sessionState.active}
 	<div class="flex flex-col pt-40 grow text-4xl gap-5">
-		<div>
-			
-		</div>
-		<p>
-			Active
-		</p>
+		{#each sessionState.items as item (item.id)}
+			<p>
+				{item.id}
+			</p>
+			<p>
+				{item.kind}
+			</p>
+			<p>
+				{item.label}
+			</p>
+			<p>
+				{item.payload}
+			</p>
+		{/each}
 	</div>
 {:else}
 	<div class="flex flex-col justify-center items-center pt-40 grow text-4xl gap-5">
