@@ -45,7 +45,11 @@ async fn get_items(state: State<'_, SessionState>) -> Result<Vec<SessionItem>, S
 
     let session = lock.as_ref().ok_or("No active session!".to_string())?;
 
-    Ok(session.items.clone())
+    let mut items = session.items.clone();
+    // Remove the canary for the frontend (guaranteed to be index 0)
+    items.remove(0);
+
+    Ok(items)
 }
 
 #[cfg_attr(mobile, tauri::mobile_entry_point)]

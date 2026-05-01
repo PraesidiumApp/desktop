@@ -4,6 +4,7 @@
     import { waiterState } from "$lib/state/waiter.svelte";
 	import { open, save } from "@tauri-apps/plugin-dialog";
 	import { invoke } from "@tauri-apps/api/core";
+	import { basename } from "@tauri-apps/api/path";
     import { slide } from "svelte/transition";
     import { toasterState } from "$lib/state/toaster.svelte";
     import { sessionState } from "$lib/state/session.svelte";
@@ -81,6 +82,7 @@
 				await invoke("new_session", { path: filePath, password: password });
 				waiterState.active = false;
 				sessionState.active = true;
+				sessionState.vaultName = await basename(filePath);
 				sessionState.fetchItems();
 				toasterState.add("info", "scanning_for_items");
 			} catch (backendError) {
@@ -92,6 +94,7 @@
 				await invoke("open_session", { path: filePath, password: password });
 				waiterState.active = false;
 				sessionState.active = true;
+				sessionState.vaultName = await basename(filePath);
 				sessionState.fetchItems();
 				toasterState.add("info", "scanning_for_items");
 			} catch (backendError) {

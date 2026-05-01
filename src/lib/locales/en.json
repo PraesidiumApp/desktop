@@ -37,7 +37,14 @@
       "create": "Create",
       "or": "or",
       "open": "Open",
-      "a_vault": "a vault?"
+      "a_vault": "a vault?",
+      "item_type": "Type:",
+      "item_id": "ID:",
+      "close": "Close",
+      "create_item": "Create",
+      "delete_item": "Delete",
+      "update_item": "Update",
+      "vault": "Vault"
     }
   }
 }

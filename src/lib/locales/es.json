@@ -37,7 +37,14 @@
       "create": "Crear",
       "do_you_want_to": "¿Qué quieres hacer,",
       "open": "Abrir",
-      "or": "o"
+      "or": "o",
+      "item_type": "Tipo:",
+      "item_id": "ID:",
+      "delete_item": "Eliminar",
+      "update_item": "Actualizar",
+      "vault": "Bóveda",
+      "close": "Cerrar",
+      "create_item": "Crear"
     }
   }
 }

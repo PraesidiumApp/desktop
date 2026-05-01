@@ -18,6 +18,8 @@ interface SessionItem {
 class SessionState {
 	active = $state(false);
 
+	vaultName = $state("");
+
 	items: SessionItem[] = $state([]);
 
 	async fetchItems() {
