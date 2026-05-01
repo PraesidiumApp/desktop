@@ -14,7 +14,8 @@
       "backend_error": "The backend returned an error:",
       "specify_path": "You must specify a file path before creating a new session",
       "specify_password": "You must specify a master password before creating a new session",
-      "scanning_for_items": "Scanning for items..."
+      "scanning_for_items": "Scanning for items...",
+      "session_closed": "Your session has been closed"
     },
     "file_picker": {
       "select_location_new_vault": "Write or select the path for your new vault",

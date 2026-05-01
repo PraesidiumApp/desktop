@@ -2,9 +2,17 @@
     import { localeState } from "$lib/state/locale.svelte";
 	import FilePicker from "$lib/components/FilePicker.svelte";
     import { sessionState } from "$lib/state/session.svelte";
+	import { invoke } from "@tauri-apps/api/core"
+    import { toasterState } from "$lib/state/toaster.svelte";
 
 	let filePickerReady = $state(false);
 	let newOrOpenChoice: "new" | "open" = $state("new");
+
+	async function closeSession() {
+		await invoke("close");
+		sessionState.active = false;
+		toasterState.add("info", "session_closed");
+	}
 
 	let tempPayloadTouched = false;
 	let tempPayload = "";
@@ -14,7 +22,7 @@
 	<div class="flex flex-col pt-40 w-full grow items-center">
 		<div class="flex flex-col w-[95vw] max-w-300 text-4xl gap-5">
 			<div class="flex flex-row justify-between">
-				<button class="cursor-pointer rounded-2xl border-2 bg-(--dock-bg) dark:bg-(--dock-bg-dark) border-(--dock-border) dark:border-(--dock-border-dark) p-2">
+				<button class="cursor-pointer rounded-2xl border-2 bg-(--dock-bg) dark:bg-(--dock-bg-dark) border-(--dock-border) dark:border-(--dock-border-dark) p-2" onclick={async () => await closeSession()}>
 					<p>
 						{localeState.labels.pages.vault.close}
 					</p>

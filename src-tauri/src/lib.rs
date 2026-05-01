@@ -40,6 +40,16 @@ async fn open_session(
 }
 
 #[tauri::command]
+async fn close(state: State<'_, SessionState>) -> Result<(), String> {
+    let mut lock = state.0.lock().map_err(|e| e.to_string())?;
+
+    // Drop the Session, safely closing it
+    *lock = None;
+
+    Ok(())
+}
+
+#[tauri::command]
 async fn get_items(state: State<'_, SessionState>) -> Result<Vec<SessionItem>, String> {
     let lock = state.0.lock().map_err(|e| e.to_string())?;
 
@@ -55,7 +65,7 @@ async fn get_items(state: State<'_, SessionState>) -> Result<Vec<SessionItem>, S
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
     tauri::Builder::default()
-        .invoke_handler(tauri::generate_handler![new_session, open_session, get_items])
+        .invoke_handler(tauri::generate_handler![new_session, open_session, close, get_items])
         .manage(SessionState(Mutex::new(None)))
         .plugin(tauri_plugin_dialog::init())
         .plugin(tauri_plugin_opener::init())
