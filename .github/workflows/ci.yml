@@ -5,6 +5,10 @@ on:
     branches: [ "master" ]
     tags: [ "v*" ]
 
+defaults:
+  run:
+    working-directory: ./src-tauri
+
 jobs:
   check-and-test:
     runs-on: ubuntu-latest
