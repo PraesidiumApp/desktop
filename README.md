@@ -14,8 +14,8 @@ You will need the following softwares for the build sequence
 
 * **Clone this repository:**  
 `git clone https://github.com/PraesidiumApp/desktop.git`  
-`git checkout latest`  
-`cd desktop/`
+`cd desktop/`  
+`git checkout latest`
 * **Install NPM dependencies:**  
 `npm ci`
 * **Install Cargo dependencies:**  
