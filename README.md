@@ -22,7 +22,7 @@ You will need the following softwares for the build sequence
 `cd src-tauri/`  
 `cargo fetch --locked`
 * **Build the app:**  
-`npm run tauri build --no-bundle`  
+`npm run tauri build -- --no-bundle`  
 `cp src-tauri/target/release/praesidium-desktop ~`
 * **Your app is ready to use in your home directory**
 
