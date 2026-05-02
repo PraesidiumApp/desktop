@@ -1,14 +1,14 @@
 import { invoke } from "@tauri-apps/api/core";
 import { toasterState } from "./toaster.svelte";
 
-interface RawSessionItem {
+export interface RawSessionItem {
     id: number;
     label: string;
     kind: string;
     payload: number[];
 }
 
-interface SessionItem {
+export interface SessionItem {
     id: number;
     label: string;
     kind: string;

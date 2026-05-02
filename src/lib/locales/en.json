@@ -15,7 +15,12 @@
       "specify_path": "You must specify a file path before creating a new session",
       "specify_password": "You must specify a master password before creating a new session",
       "scanning_for_items": "Scanning for items...",
-      "session_closed": "Your session has been closed"
+      "session_closed": "Your session has been closed",
+      "new_item_id_below_1": "The ID for your new item can't be below 1",
+      "new_item_id_exists": "The specified ID already exists",
+      "new_item_added": "New item added with ID:",
+      "item_deleted": "Item deleted with ID:",
+      "item_updated": "Item updated with ID:"
     },
     "file_picker": {
       "select_location_new_vault": "Write or select the path for your new vault",
@@ -45,7 +50,13 @@
       "create_item": "Create",
       "delete_item": "Delete",
       "update_item": "Update",
-      "vault": "Vault"
+      "vault": "Vault",
+      "label_for_new_item": "New label",
+      "contents_for_new_item": "Contents for this new item",
+      "type_for_new_item": "New type:",
+      "password_type": "user-password",
+      "openssh_key_type": "openssh-key",
+      "cancel": "Cancel"
     }
   }
 }

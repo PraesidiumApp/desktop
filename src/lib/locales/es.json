@@ -15,7 +15,12 @@
       "specify_path": "Debes especificar una ruta de archivo antes de crear una nueva sesión",
       "specify_password": "Debes especificar una contraseña maestra antes de crear una nueva sesión",
       "scanning_for_items": "Escaneando en busca de items...",
-      "session_closed": "Se ha cerrado tu sesión"
+      "session_closed": "Se ha cerrado tu sesión",
+      "new_item_id_below_1": "El ID para tu nuevo item no puede estar por debajo de 1",
+      "new_item_added": "Nuevo item añadido con ID:",
+      "new_item_id_exists": "El ID especificado ya existe",
+      "item_deleted": "Item eliminado con ID:",
+      "item_updated": "Item actualizado con ID:"
     },
     "file_picker": {
       "select_location_existing_vault": "Escribe o selecciona la ubicación de tu bóveda",
@@ -45,7 +50,13 @@
       "update_item": "Actualizar",
       "vault": "Bóveda",
       "close": "Cerrar",
-      "create_item": "Crear"
+      "create_item": "Crear",
+      "contents_for_new_item": "Contenidos para este nuevo item",
+      "label_for_new_item": "Nueva etiqueta",
+      "type_for_new_item": "Nuevo tipo:",
+      "openssh_key_type": "openssh-key",
+      "password_type": "user-password",
+      "cancel": "Cancelar"
     }
   }
 }
