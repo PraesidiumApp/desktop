@@ -2,7 +2,7 @@
     import { localeState } from "$lib/state/locale.svelte";
 	import FilePicker from "$lib/components/FilePicker.svelte";
     import { sessionState, type RawSessionItem, type SessionItem } from "$lib/state/session.svelte";
-	import { invoke } from "@tauri-apps/api/core"
+	import { invoke } from "@tauri-apps/api/core";
     import { toasterState } from "$lib/state/toaster.svelte";
     import { slide } from "svelte/transition";
 
