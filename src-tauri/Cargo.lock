@@ -957,8 +957,8 @@ checksum = "66b7e2430c6dff6a955451e2cfc438f09cea1965a9d6f87f7e3b90decc014099"
 
 [[package]]
 name = "engine"
-version = "0.1.0-dev"
-source = "git+https://github.com/PraesidiumApp/engine.git?branch=master#34328c4a9b5baee609f4ad339b7604143150dcd1"
+version = "0.1.0"
+source = "git+https://github.com/PraesidiumApp/engine.git?tag=v0.1.0-final#0f7a47aa7e443c62789d54ca2576f5cf79b1dd1a"
 dependencies = [
  "aes-gcm",
  "argon2",
@@ -2787,7 +2787,7 @@ checksum = "439ee305def115ba05938db6eb1644ff94165c5ab5e9420d1c1bcedbba909391"
 
 [[package]]
 name = "praesidium-desktop"
-version = "0.1.0-dev"
+version = "0.1.0"
 dependencies = [
  "engine",
  "tauri",
